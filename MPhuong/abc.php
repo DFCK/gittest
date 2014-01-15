@@ -3,7 +3,7 @@
 <body>
 
 <?php
-echo "MINH PHUONG HERE!";
+echo "MINH PHUONG HERE IS!";
 ?>
 
 </body>
