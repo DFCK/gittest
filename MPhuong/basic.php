@@ -1,7 +1,34 @@
 <?php
-$n=20;
-$php="PHP";
+$iN=20;
+$strPhp="PHP";
 
-var_dump($n);
+echo "I. Lay kieu du lieu </br />";
+echo "1. dump </br />";
+var_dump($iN);
 echo "</br />";
-gettype($php);
+var_dump($strPhp);
+echo "</br />";
+
+echo "2. get type </br />";
+echo gettype($iN);
+echo "</br />";
+echo gettype($strPhp);
+
+echo "</br />";
+echo "******************";
+echo "</br />";
+
+echo "II. Kiem tra kieu du lieu";
+echo "</br />";
+if(is_numeric($iN))
+{
+    echo "Numeric";
+}
+else if(is_string($strPhp))
+{
+    echo "String";
+}
+else
+{
+    echo "Ngồi chơi đi - hông có kiểu nào hết :P";
+}
