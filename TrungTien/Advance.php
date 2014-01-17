@@ -6,9 +6,9 @@ else $_SESSION["views"]=1;
 <body>
 
 <?php
+    include 'menu.php';
     echo "PageView: ".$_SESSION["views"];
     echo '<a href = "basic.php"> Basic </a><br>';
-    //include 'welcome.php';
     $file = fopen("D:\\as.txt","r") or exit("unable to open file");
     while(!feof($file))
     {
@@ -16,9 +16,25 @@ else $_SESSION["views"]=1;
     }
     fclose($file);
 
-    setcookie("user", "Alex Porter", time()+10);
-    echo $_COOKIE["user"];
-    print_r($_COOKIE);
+    $con = mysqli_connect("localhost","root","",histudb);
+    if(mysqli_connect_errno()) echo "connection failed";
+    else echo "connect successfully";
+    $query = "SELECT NAME,login_id FROM care_users";
+    $result = mysqli_query($con,$query);
+
+    echo "<table border = '1'>
+<th>Name</th>
+<th>id</th>
+";
+    while($row = mysqli_fetch_array($result))
+    {
+        echo "<tr>";
+        echo "<td>" . $row['NAME'] . "</td>";
+        echo "<td>" . $row['login_id'] . "</td>";
+        echo "</tr>";
+    }
+    echo '</table>';
+    mysqli_close($con);
 ?>
 
 </body>

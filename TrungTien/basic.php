@@ -136,14 +136,9 @@ foreach($age as $x=>$x_value)
     echo "<br>";
 }
 
-
 echo $_SERVER['PHP_SELF']."<br>";
 echo $_SERVER['SERVER_NAME']."<br>";
 echo $_SERVER['HTTP_HOST']."<br>";
-echo $_SERVER['HTTP_REFERER']."<br>";
-echo $_SERVER['HTTP_USER_AGENT']."<br>";
-echo $_SERVER['SCRIPT_NAME']."<br>";
- ?>
 
 <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 Name: <input type="text" name="fname">
@@ -156,6 +151,7 @@ echo $name;
 */?>
 
 <?php
+include 'menu.php';
 $name = $email = $gender = $comment = $website = "";
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
