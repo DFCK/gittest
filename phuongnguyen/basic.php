@@ -66,3 +66,24 @@ while($x<=6)
     E-mail: <input type="text" name="email"><br>
     <input type="submit">
 </form>
+<?php
+$a=1;$b=2;
+function trans($a,$b)
+{
+    $a=$b;
+    $b=0;
+}
+Trans(&$a,$b);
+echo $a;
+echo "<br>";
+echo $b;
+Function sum()
+{
+    global $a;
+    $a+=1;
+}
+Sum();
+echo "<br>";
+echo $a;
+?>
+
