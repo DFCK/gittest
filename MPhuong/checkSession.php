@@ -16,20 +16,22 @@ else
 {
     $_SESSION["views"]=1;
 }
-echo "T doc HIS views " . $_SESSION["views"] . " lan roi. M khong biet ha =))";
-if($_SESSION["views"]==2)
+//Hủy session "Views" sau 5 lần
+echo "Views " . $_SESSION["views"] . " times.";
+if($_SESSION["views"]==5)
 {
     unset($_SESSION["views"]);
 }
+
 //visit
-if($_SESSION["visit"]==10)
-{
-    $_SESSION["visit"]=$_SESSION["visit"]+1;
-}
-else
+if(empty($_SESSION["visit"]))
 {
     $_SESSION["visit"]=1;
 }
+else
+{
+    $_SESSION["visit"]=$_SESSION["visit"]+1;
+}
 echo "<br />";
-echo "T doc HIS visit " . $_SESSION["visit"] . " lan roi. M khong biet ha =))";
+echo "Visit " . $_SESSION["visit"] . " times";
 ?>
