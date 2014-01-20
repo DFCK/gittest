@@ -1,0 +1,50 @@
+PHP
+4/
+$message là biến
+$$message là biến
+vd:
+$message ='hello';
+echo $message; ==>kq: hello
+$$message='world';// nghĩa là $hello='world'
+echo $$message;//nghĩa là echo $hello ==>kq: world
+6/
+2
+2
+7/
+2
+==================================================================================================================
+HTML
+1/
+DOCTYPE để chỉ cho trình duyệt web biết phiên bản ngôn ngữ đánh dấu nào được sử dụng trong trang web
+Mỗi tiêu chuẩn HTML và XHTML đều có một DOCTYPE (Document Type Declaration) để khai báo khi được kiểm tra rằng phiên bản HTML hoặc XHTML đang được bạn sử dụng. DOCTYPE, thường được đặt ở đầu mỗi Web Document, là thành phần chính của các Web Document chuẩn mực. Thiếu DOCTYPE, markup mà bạn viết và CSS sẽ không được kiểm duyệt.
+
+DOCTYPE còn là yếu tố cơ bản để các Web Document được render và sử dụng được các tính năng một cách chính xác trong các trình duyệt chuẩn mực, như là Mozilla, IE5 trên Mac, và IE6 trên Win.
+Không chọn hoặc chọn nhầm DOCTYPE sẽ khiến các Web Browser xem như là Web Document của bạn được viết theo kiểu cũ, viết sai, gọi chung là “Quirks” mode. Theo đó, các Web Browser sẽ xử lý trang Web của bạn làm sao đó để nó tương thích ngược với các phiên bản của các trình duyệt này, và làm theo cách riêng của chúng. Vì thế, Web Documents của bạn sẽ được hiển thị khác nhau trên các trình duyệt khác nhau. Rõ ràng, đây không phải là điều bạn muốn, nhưng nó thường là cái bạn sẽ có được, vì hậu quả nặng nề của việc không chọn hoặc chọn sai DOCTYPE.
+các DOCTYPE là giúp cho Web Browser biết được các chuẩn mực nào của Web Standard, và vì W3C đã sáng tạo ra Web Standard, nên các DOCTYPE được cung cấp bởi Web Site của W3C
+7/
+tag marquee cho chữ chạy.
+các thuộc tính của marquee direction: hướng chữ chạy
+								loop: số lần lập
+								behavior: kiểu chạy có 3 thuộc tính: slide chạy chạm lề là dừng, scroll, alternate: chạy chạm lề chạy ngược lại
+								scrolldelay: thời gian dừng
+								scrollamount: tốc độ
+=====================================================================================================================
+CSS
+3/
+dùng hàm onmoveover
+4/
+border là đường viền.
+margin: canh khoảng cách từ đường viền trở ra ngoài
+padding: canh khoảng cách từ đường viền trở vào trong
+1/
+position: 	static: Thành phần sẽ nằm theo thứ tự trong văn bản, đây là dạng mặc định.
+			relative: định vị trí tuyệt đối cho thành phần
+			absolute: Định vị trí tuyệt đối cho thành phần theo thành phần bao ngoài (thành phần định vị trí tương đối position: relative;) hoặc theo cửa sổ trình duyệt.
+			fixed: Định vị trí tương đối cho thành phần theo cửa sổ trình duyệt.
+			inherit: Xác định thừa hưởng thuộc tính từ thành phần cha (thành phần bao ngoài).
+2/
+Thuộc tính z-index thiết lập thứ tự xếp chồng nhau của một thành phần vị trí.
+Thứ tự chồng nhau được sắp xếp dựa theo giá trị số, thành phần HTML nào có chỉ số z-index cao hơn sẽ nằm trên, ngược lại sẽ nằm dưới, giá trị mặc định là 0.
+Có thể sử dụng số âm.
+Giá trị tốt nhất là không sử dụng đơn vị.
+Chú ý: z-index chỉ làm việc cùng với thuộc tính position.
