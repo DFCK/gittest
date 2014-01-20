@@ -44,7 +44,7 @@ $Nam=date("Y");
 ?>
 <select >
     <?php
-    while($Nam>1990){
+    while($Nam > 2000){
         ?>
     <option>
         <?php
@@ -52,10 +52,19 @@ $Nam=date("Y");
         ?>
     </option>
     <?php
+
+
+        $Nam --;
+    }
+    while ($Nam <2000 and $Nam >1995){
+    ?>
+    <option>
+       <?php echo 0; ?>
+    </option>
+    <?php
         $Nam --;
     }
     ?>
-
 </select>
 
 <br>
