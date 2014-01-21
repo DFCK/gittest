@@ -1,7 +1,6 @@
 {*{abc} nhận dữ liệu  từ trang php*}
 {*1.*}
-{$abc
-}
+{$abcS}
 
 {*2.*}
 <form action="" method="post">
@@ -12,5 +11,5 @@
     <input type="password" name="password"/> 123
     <br />
     <input type="submit" name="Login" value="LOGIN"/>
-    <input type="submit" name="Value" value="START"/>
+    <input type="submit" name="Start" value="START"/>
 </form>

@@ -10,10 +10,10 @@
 include("Smarty/libs/Smarty.class.php");
 $df=new Smarty();
 //1. truyền biến abc qua file object.tpl
-if(isset($_POST["Value"]))
+if(isset($_POST["Start"]))
 {
     $abc="HELLO SMARTY";
-    $df->assign("abc",$abc);
+    $df->assign("abcS",$abc);
 }
 $df->display("object.tpl");
 //2. đăng nhập
