@@ -97,7 +97,7 @@ Cách khắc phục:
 Abstract class: là một class cha cho tất cả các class có cùng bản chất. Bản chất ở đây được hiểu là kiểu, loại, nhiệm vụ của class. Hai class cùng hiện thực một interface có thể hoàn toàn khác nhau về bản chất.
 Interface: là một chức năng mà bạn có thể thêm và bất kì class nào. Từ chức năng ở đây không đồng nghĩa với phương thức (hoặc hàm). Interface có thể bao gồm nhiều hàm/phương thức và tất cả chúng cùng phục vụ cho một chức năng.
 18/
-WordPress, Joomla,  Drupal, PhpBB, Mediawiki
+WordPress, Joomla,  Drupal, PhpBB, Mediawiki.
 ==================================================================================================================
 HTML
 1/
