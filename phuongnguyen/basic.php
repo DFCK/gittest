@@ -85,5 +85,9 @@ Function sum()
 Sum();
 echo "<br>";
 echo $a;
+require('mysql.php');
+echo "Chèn thành công";
+require_once ('mysql.php');
 ?>
+
 

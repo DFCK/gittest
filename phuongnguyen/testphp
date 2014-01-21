@@ -1,4 +1,12 @@
 PHP
+1/
+Session là khoảng thời gian người sử dụng giao tiếp với 1 ứng dụng. Session bắt đầu khi người sử dụng truy cập vào ứng dụng lần đầu tiên, và kết thúc khi người sử dụng thoát khỏi ứng dụng. Mỗi session sẽ có một định danh (ID), 1 session khác nhau sẽ có ID khác nhau. Trong ngữ cảnh ứng dụng web, website sẽ quyết định khi nào session bắt đầu và kết thúc.
+Trong 1 session, website có thể lưu trữ một số thông tin như đánh dấu bạn đã login hay chưa, những bài viết nào bạn đã đọc qua, v.v...
+vd: session["cart"] lưu giỏ hàng
+3/
+Cookies là 1 đoạn dữ liệu được truyền đến browser từ server, đoạn dữ liệu này sẽ được browser lưu trữ (trong memory hoặc trên đĩa) và sẽ gởi ngược lên lại server mỗi khi browser tải 1 trang web từ server.
+Những thông tin được lưu trữ trong cookies hoàn toàn phụ thuộc vào website trên server. Mỗi website có thể lưu trữ những thông tin khác nhau trong cookies, ví dụ thời điểm lần cuối bạn ghé thăm website, đánh dấu bạn đã login hay chưa, v.v...
+Cookies được tạo ra bởi website và gởi tới browser, do vậy 2 website khác nhau (cho dù cùng host trên 1 server) sẽ có 2 cookies khác nhau gởi tới browser. Ngoài ra, mỗi browser quản lý và lưu trữ cookies theo cách riêng của mình, cho nên 2 browser cùng truy cập vào 1 website sẽ nhận được 2 cookie khác nhau.
 4/
 $message là biến
 $$message là biến
@@ -12,6 +20,84 @@ echo $$message;//nghĩa là echo $hello ==>kq: world
 2
 7/
 2
+8/
+require() – include() :
+
+- Giống: Chèn file vào file hiện tại, nếu file được chèn có lỗi thì hiện thông báo lỗi
+
+- Khác : khi file được chèn bằng lệnh require() có lỗi thì trình biên dịch sẽ dừng lại, không dịch nữa và sẽ xuất hiện thông báo lỗi. Còn khi file được chèn bằng lệnh include() có lỗi thì trình biên dịch vẫn tiếp tục dịch cho đến hết, đồng thời cũng  xuất hiện warning để mình biết file đó bị lỗi.
+
+Ví dụ 1: file a.php
+
+<?php
+required (‘b.php’);
+echo “hello”;
+?>
+
+Giả sử file b.php không tồn tại, khi chạy file a.php lên, trên màn hình sẽ không xuất hiện chữ hello
+
+Ví dụ 2: file a.php
+
+<?php
+include (‘b.php’);
+echo “hello”;
+?>
+
+Giả sử file b.php không tồn tại, khi chạy file a.php lên, trên màn hình có xuất hiện chữ hello
+
+require_once() – include_once()
+
+- Là hai dạng biến đổi của hàm require() và include()
+
+- Mục đích : nếu file được chèn đã được chèn ở trước đó rồi, thì bây giờ sẽ không chèn nữa.
+
+Ví dụ:
+File a.php có nội dung là : aaaaaaaa ==
+File b.php có nội dung là:
+
+<?php
+
+include “a.php”;
+include “a.php”;
+
+?>
+
+Khi chạy file b.php thì kết quả sẽ là:  aaaaaaaa ==aaaaaaaa ==
+
+Ví dụ 2:
+Nhưng nếu file b.php sữa lại là:
+
+<?php
+include (“a.php”);
+include_once(“a.php”);
+?>
+
+hoặc là:
+
+<?php
+include_once (“a.php”);
+include_once(“a.php”);
+?>
+
+thì khi chạy file b.php thì kết quả sẽ là: aaaaaaaa ==
+10/
++ Trước khi gọi hàm header bạn đã echo một nội dung gì đó hoặc một khoảng trắng.
++ Hoặc là trước hàm header đã có lệnh nào đó bị warning (tức là dòng code nào đó trước dòng header bị lỗi)
+13/
+mysql_fetch_assoc: trả về mảng array(3) { ["FirstName"]=> string(5) "Peter" ["LastName"]=> string(7) "Griffin" ["Age"]=> string(2) "35" }
+mysql_fetch_array: mysql_fetch_array($sql,mode_fetch);
+                   trong đó mode_fetch có các giá trị:
+                   + MYSQL_ASSOC: trả về associative array(giống mysql_fetch_assoc())
+                   + MYSQL_NUM: trả về enumerated array(giống mysql_fetch_row())
+                   +MYSQL_BOTH : (mặc định) trả về mảng array(6) { [0]=> string(5) "Peter" ["FirstName"]=> string(5) "Peter" [1]=> string(7) "Griffin" ["LastName"]=> string(7) "Griffin" [2]=> string(2) "35" ["Age"]=> string(2) "35" }
+11/
+SQL injection là một kỹ thuật cho phép những kẻ tấn công lợi dụng lỗ hổng của việc kiểm tra dữ liệu đầu vào trong các ứng dụng web và các thông báo lỗi của hệ quản trị cơ sở dữ liệu trả về để inject (tiêm vào) và thi hành các câu lệnh SQL bất hợp pháp, Sql injection có thể cho phép những kẻ tấn công thực hiện các thao tác, delete, insert, update,… trên cơ sỡ dữ liệu của ứng dụng, thậm chí là server mà ứng dụng đó đang chạy, lỗi này thường xãy ra trên các ứng dụng web có dữ liệu được quản lý bằng các hệ quản trị cơ sở dữ liệu như SQL Server, MySQL, Oracle, DB2, Sysbase...
+Cách khắc phục:
+12/
+Abstract class: là một class cha cho tất cả các class có cùng bản chất. Bản chất ở đây được hiểu là kiểu, loại, nhiệm vụ của class. Hai class cùng hiện thực một interface có thể hoàn toàn khác nhau về bản chất.
+Interface: là một chức năng mà bạn có thể thêm và bất kì class nào. Từ chức năng ở đây không đồng nghĩa với phương thức (hoặc hàm). Interface có thể bao gồm nhiều hàm/phương thức và tất cả chúng cùng phục vụ cho một chức năng.
+18/
+WordPress, Joomla,  Drupal, PhpBB, Mediawiki
 ==================================================================================================================
 HTML
 1/

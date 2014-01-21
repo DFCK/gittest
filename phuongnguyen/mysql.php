@@ -15,10 +15,10 @@ else
     else
     {
         $row_return=$kq->num_rows;
-       // $arr=$kq->fetch_row();
+       $arr=$kq->fetch_array();
         echo $row_return;
-       // echo '<br>';
-        //var_dump($arr);
+       echo '<br>';
+        var_dump($arr);
     }
     echo '<br>';
 }
