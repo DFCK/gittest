@@ -1,31 +1,14 @@
 <html>
+<head>
+    <title > Bai test Html </title>
+</head>
 <body>
+<img src="/gittest/HienNguyen/Image/aq.png" usemap="#Map" />
+<map name="Map" id="M">
+    <area shape="default" coords="0, 100, 100" href="Vd1.php">
 
-<?php
-if (isset($_REQUEST['email']))
-//if "email" is filled out, send email
-{
-    //send email
-    $email = $_REQUEST['email'] ;
-    $subject = $_REQUEST['subject'] ;
-    $message = $_REQUEST['message'] ;
-    mail("tmc.hiennguyen@gmail.com", $subject,
-        $message, "From:" . $email);
-    echo "Thank you for using our mail form";
-}
-else
-//if "email" is not filled out, display the form
-{
-    echo "<form method='post' action='mailform.php'>
-  Email: <input name='email' type='text'><br>
-  Subject: <input name='subject' type='text'><br>
-  Message:<br>
-  <textarea name='message' rows='15' cols='40'>
-  </textarea><br>
-  <input type='submit'>
-  </form>";
-}
-?>
+    <marquee direction="up"> he he hihi</marquee>
+
 
 </body>
 </html>

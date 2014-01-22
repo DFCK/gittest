@@ -1,0 +1,34 @@
+/*
+ 1. Postion xác định vị trí cho thành phần, có các giá trị như:
+    - static: đây là dạng mặc định, các thành phần sẽ được nằm theo thứ tự trong văn bản
+    - relative: định vị trí tuyệt đối cho thành phần
+    - absolute: định vị trí tuyệt đối theo thành phần bao ngoài hoặc cửa sổ trình duyệt
+    - fixed: định vị trí tương đối cho thành phần theo cửa sổ trình duyệt
+     inherit: lấy giá trị từ thành phần bao ngoài
+ 2. z-index xác định thứ tự xếp chồng nhau của 1 thành phần vị trí, Html xác định thứ tự dựa theo chỉ số của z-index, thường đi kèm vs postion.
+ Có các giá trị như:
+    -auto: dạng mặc định, tự động xếp chồng
+    - giá trị: xếp chồng theo thứ tự
+    - inherit: xác định dựa vào thằng cha.
+  3. dùng thêm cái hover nữa là xong. Như cái <b1>
+  4. Border dùng để định dạng đường viền, margin để canh lề, padding: thêm vào khoảng trống.
+  5.
+ */
+abc {
+     border: 2px;
+    margin: 100;
+}
+b1 {
+    text-decoration: none;
+    font-size: 35;
+    color: darkcyan;
+}
+b1:hover{
+    text-decoration: underline;
+    font-size: 35;
+    color: darkcyan;
+}
+b2 {
+    font-size: 25;
+    color: darkmagenta;
+}
