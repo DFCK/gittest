@@ -1,0 +1,13 @@
+p{
+    background: yellowgreen;
+    color: yellow;
+    height: 50px;
+    left: 30px;
+    position: fixed;
+    top: 30px;
+    width: 200px;
+}
+.div{
+    border: 1px red dashed;
+    height: 100px;
+}
