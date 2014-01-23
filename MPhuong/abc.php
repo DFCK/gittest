@@ -3,8 +3,8 @@
 <body>
 
 <?php
-//echo "MINH PHUONG IS HERE";
-phpinfo();
+echo "MINH PHUONG IS HERE";
+//phpinfo();
 ?>
 
 </body>
